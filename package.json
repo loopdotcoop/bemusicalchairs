@@ -1,0 +1,48 @@
+{
+  "name": "bemusicalchairs",
+  "version": "0.0.1",
+  "description": "An enchantingly-interactive installation blending light, sound and a pleasant sit down. ",
+  "main": "build/bemusicalchairs.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test",
+    "example": "usage"
+  },
+  "devDependencies": {
+    "apage": "latest",
+    "coffee-script": "latest",
+    "nodemon": "latest"
+  },
+  "dependencies": {
+  },
+  "keywords": [
+    "Interactive",
+    "Audio",
+    "LED",
+    "Pixel",
+    "NeoPixel",
+    "Addressable LED",
+    "Microcontroller",
+    "MCU",
+    "Arduino",
+    "Espruino",
+    "CoffeeScript",
+    "Literate CoffeeScript"
+  ],
+  "scripts": {
+    "hi": "open .; open index.html; open test/run-test.html; subl .",
+    "build": "node oopish/bin/oopish-build",
+    "doc": "node_modules/apage/bin/apage -i README.md doc/*.md -o index.html -p \"`cat node_modules/apage/build/plugin/*.js`\"",
+    "test": "node test/run-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loopdotcoop/bemusicalchairs.git"
+  },
+  "author": "Rich Plastow <rich@richplastow.com> (http://richplastow.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loopdotcoop/bemusicalchairs/issues"
+  },
+  "homepage": "http://bemusicalchairs.loop.coop/"
+}
