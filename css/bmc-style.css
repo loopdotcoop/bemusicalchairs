@@ -1,0 +1,85 @@
+/* Typography */
+body {
+    margin: 0;
+    background: #111; 
+    color: #eee;
+    font-family: Podkova, Arial, Helvetica, sans-serif; 
+    font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
+    text-align: center;
+}
+h1 { font-size: 3.0em; }
+h3 { font-size: 2.0em; }
+p  { font-size: 1.5em; }
+
+
+/* Layout */
+.bmc-wrap,
+.bmc-main > div {
+    display: table;
+    width: 100%;
+    background: #333;
+}
+.bmc-wrap > div,
+.bmc-main > div > div {
+    display: table-row;
+}
+.bmc-wrap > div > div,
+.bmc-main > div > div > div {
+    display: table-cell;
+}
+.bmc-wrap > div > div {
+    min-width: 1em;
+}
+.bmc-main {
+    width: 30em; /* mobile */
+}
+.bmc-main > div {
+    background: #555;
+}
+
+
+/* Responsive */
+@media (min-width: 400px)  and (max-width: 499px)  { /* 100px */
+    .bmc-wrap { font-size: 1.1em;  }
+    .bmc-main { width:     34em;   }
+}
+@media (min-width: 500px)  and (max-width: 599px)  { /* 100px */
+    .bmc-wrap { font-size: 1.2em;  }
+    .bmc-main { width:     40em;   }
+}
+@media (min-width: 600px)  and (max-width: 749px)  { /* 150px */
+    .bmc-wrap { font-size: 1.3em;  }
+    .bmc-main { width:     44em;   }
+}
+@media (min-width: 750px)  and (max-width: 949px)  { /* 200px */
+    .bmc-wrap { font-size: 1.4em;  }
+    .bmc-main { width:     51.5em; }
+}
+@media (min-width: 950px)  and (max-width: 1199px) { /* 250px */
+    .bmc-wrap { font-size: 1.5em;  }
+    .bmc-main { width:     61.5em; }
+}
+@media (min-width: 1200px) and (max-width: 1499px) { /* 300px */
+    .bmc-wrap { font-size: 1.6em;  }
+    .bmc-main { width:     73em; }
+}
+@media (min-width: 1500px) and (max-width: 1899px) { /* 400px */
+    .bmc-wrap { font-size: 1.7em;  }
+    .bmc-main { width:     86em; }
+}
+@media (min-width: 1900px) { /* fullscreen 1080P */
+    .bmc-wrap { font-size: 1.8em;  }
+    .bmc-main { width:     103em; }
+}
+
+
+
+/* Utility */
+.eiw-hidden {
+    display: none!important;
+}
+
+
+/* Xx */
+.bmc- {
+}
