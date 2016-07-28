@@ -1,6 +1,6 @@
 {
   "name": "bemusicalchairs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An enchantingly-interactive installation blending light, sound and a pleasant sit down. ",
   "main": "build/bemusicalchairs.js",
   "directories": {
