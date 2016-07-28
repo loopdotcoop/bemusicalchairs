@@ -6,10 +6,10 @@ body {
     font-family: Podkova, Arial, Helvetica, sans-serif;
     font-size: 62.5%; /* font-size 1em = 10px on default browser settings */
 }
-h1    { font-size: 3.0em; }
-h2    { font-size: 2.5em; }
-h3    { font-size: 2.0em; }
-p, li { font-size: 1.5em; }
+h1 { font-size: 3.0em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 2.0em; }
+p  { font-size: 1.5em; }
 
 
 /* Utility */
@@ -92,6 +92,7 @@ p, li { font-size: 1.5em; }
 }
 .bmc-thanks li {
     display: inline;
+    font-size: 1.4em;
 }
 .bmc-thanks li:before {
     content: ' • ';
