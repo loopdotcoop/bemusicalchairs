@@ -29,7 +29,7 @@
                 <img alt="Bemusical Chairs intro movie"
                   lowsrc="assets/bemusical-chairs-intro-movie-608x476-lowsrc.gif"
                      src="assets/bemusical-chairs-intro-movie-608x476.gif"
-                     width="608" height="476">
+                     width="608" height="476" class="width:608px; height:476px;">
               </div>
               <div class="bmc-heading">
                 <img class="bmc-loopdotcoop-logo" alt="Loop.Coop logo"
@@ -40,27 +40,39 @@
               <h3 class="bmc-standfirst">An organic-electronic installation blending
                 light, colour and a nice sit down.</h3>
               <p>
-                Discover this curious triad of benches, nestled within a beautiful 
-                roundwood structure. Take a seat, and experience a hypnotic light 
-                show spring to life around you. 
+                Discover this curious triad of benches, nestled within a beautiful
+                roundwood structure. Take a seat, and experience a hypnotic light
+                show spring to life around you.
               </p>
               <p>
-                Bemusical Chairs premiered at 
+                Bemusical Chairs premiered at
                 <a target="_blank" href="http://www.shambalafestival.org/venues/the-enchanted-woods/">
-                the Enchanted Woods</a> at Shambala Festival, and is currently being shown at 
+                the Enchanted Woods</a> at Shambala Festival, and was then shown at
                 <a target="_blank" href="http://www.brightonopenmarket.co.uk/">The Open Market</a>
-                as part of 
+                as part of
                 <a target="_blank" href="http://brightondigitalfestival.co.uk/event/loop-coop-present-bemusical-chairs/">
-                Brighton Digital Festival.</a> 
+                Brighton Digital Festival 2016.</a>
               </p>
             </div>
           </div>
 
           <div>
-            <div class="bmc-news">
+            <div id="bmc-gallery">
               <h2>What’s been happening?</h2>
               <ul>
                 <li>
+                  <span><img src="assets/20160925-after-two-weeks-at-the-open-market.jpg"></span>
+                  <h5>25th September 2016</h5>
+                  <p>After two weeks at The Open Market</p>
+                </li><li>
+                  <span><img src="assets/20160925-close-up-with-green-leds.jpg"></span>
+                  <h5>25th September 2016</h5>
+                  <p>Close-up with green LEDs</p>
+                </li><li>
+                  <span><img src="assets/20160925-bemusical-chairs-from-above.jpg"></span>
+                  <h5>25th September 2016</h5>
+                  <p>Bemusical Chairs from above</p>
+                </li><li>
                   <span><img src="assets/20160912-making-the-signs-lunchtime-pavillion-gardens.jpg"></span>
                   <h5>12th September 2016</h5>
                   <p>Making the signs, lunchtime at Pavillion Gardens</p>
@@ -89,7 +101,7 @@
                   <h5>29th August 2016</h5>
                   <p>Taking it down is so much quicker!</p>
                 </li><li>
-                  <span><img src="assets/20160928-sunday-night-9pm.jpg"></span>
+                  <span><img src="assets/20160828-sunday-night-9pm.jpg"></span>
                   <h5>28th August 2016</h5>
                   <p>Sunday night, 9pm</p>
                 </li><li>
@@ -291,17 +303,17 @@
               <h2>About Loop.Coop</h2>
               <p>
                 This project is presented by <a href="http://loop.coop/">Loop.Coop,</a>
-                a loose cooperative of artists, programmers, musicians and inventors 
-                based in Brighton. We make colourful things which straddle the real 
+                a loose cooperative of artists, programmers, musicians and inventors
+                based in Brighton. We make colourful things which straddle the real
                 world and the digital domain, for people to play with and use creatively.
               </p>
               <p>
-                We are committed to using resources in a responsible and ethical way, 
-                and we’ve tried to minimise the environmental impact of this 
-                project at every stage. We have reused many materials from previous 
-                projects, and used ethically sourced sweet chestnut from 
+                We are committed to using resources in a responsible and ethical way,
+                and we’ve tried to minimise the environmental impact of this
+                project at every stage. We have reused many materials from previous
+                projects, and used ethically sourced sweet chestnut from
                 <a target="_blank" href="http://www.hampshirechestnut.co.uk/about.html">
-                local sustainably coppiced woodland</a> for the structure. 
+                local sustainably coppiced woodland</a> for the structure.
               </p>
               <h3 class="bmc-button"><a href="http://loop.coop/curious/">Curious about Loop.Coop?</a></h3>
             </div>
@@ -330,7 +342,7 @@
                 <li>Morgan at Shambala Festival</li>
                 <li>Paul and Alex at The Open Market</li>
               </ul>
-              <h3>Extra special thanks to Chris at Aerotrope and Mike at 
+              <h3>Extra special thanks to Chris at Aerotrope and Mike at
                 Harvey &amp; John &mdash; without your advice and generosity
                 this project could never have happened!
               </h3>
@@ -342,6 +354,47 @@
       <div class="bmc-margin">&nbsp;</div>
     </div>
   </div>
+
+  <div id="bmc-popup"></div>
+  <script>
+    !function(){
+        var $popup = document.getElementById('bmc-popup');
+        var $current = null;
+        var $previous = null;
+        var $next = null;
+        $popup.addEventListener('click', function (event) {
+            event.preventDefault();
+            var $target = event.target || event.currentTarget;
+            if ('bmc-previous' === $target.className) return showPopup($previous);
+            if ('bmc-next' === $target.className) return showPopup($next);
+            $popup.className = '';
+        });
+        var $gallery = document.getElementById('bmc-gallery');
+        $gallery.addEventListener('click', function (event) {
+            event.preventDefault();
+            var $target = event.target || event.currentTarget;
+            if ('LI' !== $target.tagName) $target = $target.parentNode;
+            if ('LI' !== $target.tagName) $target = $target.parentNode;
+            if ('LI' !== $target.tagName) return;
+            showPopup($target);
+        });
+        var showPopup = function ($target) {
+            $current = $target;
+            $previous = $target.previousElementSibling;
+            if ($previous && 'LI' !== $previous.tagName) $previous = null;
+            $next = $current.nextElementSibling;
+            if ($next && 'LI' !== $next.tagName) $next = null;
+            $popup.className = 'bmc-active';
+            $popup.innerHTML = '<div>'
+              + '  <a class="bmc-dismiss">&times;</a>'
+              + ($previous ? '  <a class="bmc-previous">&lt;</a>' : '')
+              + ($next ? '  <a class="bmc-next">&gt;</a>' : '')
+              + $current.innerHTML
+              + '</div>'
+            ;
+        }
+    }();
+  </script>
 
 </body>
 </html>
